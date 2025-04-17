@@ -16,7 +16,14 @@
 ##################
 # Catch all
 ##################
-*                                      @jongio @conniey @g2vinay
+*                                      @jongio @conniey @g2vinay @hallipr
+
+##################
+# Documentation
+##################
+/docs/                                 @jongio @rohit-ganguly
+LICENSE                                @jongio @rohit-ganguly
+*.md                                   @jongio @rohit-ganguly
 
 ##################
 # Eng Sys
