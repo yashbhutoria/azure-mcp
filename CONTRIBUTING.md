@@ -95,7 +95,9 @@ To ensure consistent code quality, the pre-commit hook is automatically installe
 
 ### Automatic Setup
 
-The pre-commit hook is installed automatically when you build the project. You do not need to run any additional commands. The hook is located in the `Scripts/git-hooks/` directory and is copied to the `.git/hooks/` folder during the build process.
+The pre-push hook is installed automatically when you build the project. You do not need to run any additional commands. The hook is located in the `eng/scripts/git-hooks/` directory and is copied to the `.git/hooks/` folder during the build process.
+
+Powershell is required for hook installation. For installation instructions, see [Installing PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell).
 
 ## Code Style
 
