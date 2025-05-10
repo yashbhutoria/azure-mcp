@@ -1,17 +1,16 @@
 # Release History
 
-## 0.0.15 (Unreleased)
+## 0.0.15 (2025-05-09)
 
 ### Features Added
 
 - Support for getting properties and runtime information for Azure Service Bus queues, topics, and subscriptions. https://github.com/Azure/azure-mcp/pull/150/
 - Support for peeking at Azure Service Bus messages from queues or subscriptions. https://github.com/Azure/azure-mcp/pull/144
-
-### Breaking Changes
-
-### Bugs Fixed
+- Adds Best Practices tool that provides guidance to LLMs for effective code generation. https://github.com/Azure/azure-mcp/pull/153 https://github.com/Azure/azure-mcp/pull/156
 
 ### Other Changes
+
+- Disabled Parallel testing in the ADO pipeline for Live Tests https://github.com/Azure/azure-mcp/pull/151
 
 ## 0.0.14 (2025-05-07)
 
