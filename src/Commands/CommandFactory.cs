@@ -68,9 +68,11 @@ public class CommandFactory
 
     public IReadOnlyDictionary<string, IBaseCommand> AllCommands => _commandMap;
 
+
     private void RegisterCommandGroup()
     {
         // Register top-level command groups
+        RegisterBestPracticesCommand();
         RegisterCosmosCommands();
         RegisterKustoCommands();
         RegisterStorageCommands();
@@ -85,6 +87,20 @@ public class CommandFactory
         RegisterGroupCommands();
         RegisterMcpServerCommands();
         RegisterServiceBusCommands();
+    }
+
+    private void RegisterBestPracticesCommand()
+    {
+        // Register Azure Best Practices command at the root level
+        var bestPractices = new CommandGroup(
+            "bestpractices",
+            "Returns secure, production-grade Azure SDK best practices. Call this before generating Azure SDK code."
+        );
+        _rootGroup.AddSubGroup(bestPractices);
+        bestPractices.AddCommand(
+            "get",
+            new BestPractices.AzureBestPracticesGetCommand(GetLogger<BestPractices.AzureBestPracticesGetCommand>())
+        );
     }
 
     private void RegisterCosmosCommands()
