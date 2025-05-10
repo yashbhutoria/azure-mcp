@@ -37,6 +37,15 @@ public sealed class QueryCommandTests
         yield return new object[] { "--cluster-uri https://mycluster.kusto.windows.net --database-name db1 --query \"StormEvents | take 1\"", true };
     }
 
+    [Fact]
+    public void Execute_ReturnsArguments()
+    {
+        var command = new QueryCommand(_logger);
+        var arguments = command.GetArguments();
+
+        Assert.Equal(12, arguments!.Count());
+    }
+
     [Theory]
     [MemberData(nameof(QueryArgumentMatrix))]
     public async Task ExecuteAsync_ReturnsQueryResults(string cliArgs, bool useClusterUri)
@@ -73,9 +82,9 @@ public sealed class QueryCommandTests
         var json = JsonSerializer.Serialize(response.Results);
         var result = JsonSerializer.Deserialize<QueryResult>(json);
         Assert.NotNull(result);
-        Assert.NotNull(result.Results);
-        Assert.Single(result.Results);
-        var actualJson = result.Results[0].ToString();
+        Assert.NotNull(result.Items);
+        Assert.Single(result.Items);
+        var actualJson = result.Items[0].ToString();
         var expectedJsonText = expectedJson[0].ToString();
         Assert.Equal(expectedJsonText, actualJson);
     }
@@ -161,7 +170,7 @@ public sealed class QueryCommandTests
 
     private sealed class QueryResult
     {
-        [JsonPropertyName("results")]
-        public List<System.Text.Json.JsonElement> Results { get; set; } = new();
+        [JsonPropertyName("items")]
+        public List<System.Text.Json.JsonElement> Items { get; set; } = new();
     }
 }

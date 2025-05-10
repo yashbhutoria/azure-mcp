@@ -66,7 +66,6 @@ module keyvault 'services/keyvault.bicep' = {
   }
 }
 
-
 module servicebus 'services/servicebus.bicep' = {
   name: '${deploymentName}-servicebus'
   params: {
