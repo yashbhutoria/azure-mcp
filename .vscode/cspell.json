@@ -39,6 +39,7 @@
         "LINUXOS",
         "LINUXPOOL",
         "LINUXVMIMAGE",
+        "msal",
         "mysvc",
         "mycluster",
         "MACOS",
