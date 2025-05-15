@@ -130,6 +130,7 @@
     ],
     "words": [
         "1espt",
+        "ADMINPROVIDER",
         "alcoop",
         "appconfig",
         "azmcp",
@@ -137,11 +138,14 @@
         "azsdk",
         "azuremcp",
         "azuresdk",
+        "cslschema",
         "bdylan",
         "bestpractices",
         "codesign",
         "CODEOWNERS",
         "cvzf",
+        "kcsb",
+        "Kusto",
         "esrp",
         "ESRPRELPACMANTEST",
         "keyvault",
@@ -161,11 +165,16 @@
         "npmjs",
         "onboarded",
         "pscore",
+        "resourcegroup",
+        "resourcegroups",
         "servicebus",
         "testsettings",
+        "vectorizable",
+        "Vectorizer",
         "vsts",
         "WINDOWSOS",
         "WINDOWSPOOL",
-        "WINDOWSVMIMAGE"
+        "WINDOWSVMIMAGE",
+        "Xunit"
     ]
 }
