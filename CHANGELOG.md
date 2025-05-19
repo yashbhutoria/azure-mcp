@@ -1,6 +1,6 @@
 # Release History
 
-## 0.0.20 (Unreleased)
+## 0.0.21 (unreleased)
 
 ### Features Added
 
@@ -8,14 +8,18 @@
 
 ### Bugs Fixed
 
-- Fixes Service Bus host name parameter description. https://github.com/Azure/azure-mcp/pull/209/
 - Updates the usage patterns of Azure Developer CLI (azd) when invoked from MCP. https://github.com/Azure/azure-mcp/pull/203
-
-### Features Added
 
 ### Other Changes
 
 - Updated to the latest ModelContextProtocol library. https://github.com/Azure/azure-mcp/pull/220
+
+## 0.0.20 (2025-05-17)
+
+### Bugs Fixed
+
+- Improve the formatting in the ParseJsonOutput method and refactor it to utilize a ParseError record. https://github.com/Azure/azure-mcp/pull/218
+- Added dummy argument for best practices tool, so the schema is properly generated for Python Open API use cases. https://github.com/Azure/azure-mcp/pull/219
 
 ## 0.0.19 (2025-05-15)
 
