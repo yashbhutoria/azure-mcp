@@ -91,12 +91,12 @@
 
 
 # PRLabel: %area-Monitor
-/src/Arguments/Monitor/                @srnagar @jongio
-/src/Commands/Monitor/                 @srnagar @jongio
-/src/Services/Azure/Monitor/           @srnagar @jongio
+/src/Arguments/Monitor/                @smritiy @srnagar @jongio
+/src/Commands/Monitor/                 @smritiy @srnagar @jongio
+/src/Services/Azure/Monitor/           @smritiy @srnagar @jongio
 
 # ServiceLabel: %area-Monitor
-# ServiceOwners:                       @srnagar @jongio
+# ServiceOwners:                       @smritiy @srnagar @jongio
 
 
 # PRLabel: %area-Search
@@ -124,4 +124,3 @@
  
 # ServiceLabel: %area-Storage
 # ServiceOwners:                       @alzimmermsft  @jongio
-
