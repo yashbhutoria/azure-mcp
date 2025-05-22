@@ -131,6 +131,7 @@
     ],
     "words": [
         "1espt",
+        "accesspolicy",
         "ADMINPROVIDER",
         "alcoop",
         "appconfig",
@@ -150,6 +151,7 @@
         "gethealth",
         "healthmodels",
         "kcsb",
+        "keyspace",
         "Kusto",
         "esrp",
         "ESRPRELPACMANTEST",
@@ -171,6 +173,7 @@
         "npmjs",
         "onboarded",
         "pscore",
+        "RediSearch",
         "resourcegroup",
         "resourcegroups",
         "servicebus",

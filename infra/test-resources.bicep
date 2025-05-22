@@ -76,6 +76,16 @@ module servicebus 'services/servicebus.bicep' = {
   }
 }
 
+module redis 'services/redis.bicep' = {
+  name: '${deploymentName}-redis'
+  params: {
+    baseName: baseName
+    location: location
+    tenantId: tenantId
+    testApplicationOid: testApplicationOid
+  }
+}
+
 module kusto 'services/kusto.bicep' = {
   name: '${deploymentName}-kusto'
   params: {

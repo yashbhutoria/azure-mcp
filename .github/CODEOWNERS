@@ -116,6 +116,13 @@
 # ServiceLabel: %area-ServiceBus
 # ServiceOwners:                       @shankarsama @EldertGrootenboer
 
+# PRLabel: %area-Redis
+/src/Arguments/Redis/             @philon-msft @xiangyan99
+/src/Commands/Redis/              @philon-msft @xiangyan99
+/src/Services/Azure/Redis/        @philon-msft @xiangyan99
+
+# ServiceLabel: %area-Redis
+# ServiceOwners:                       @philon-msft @carldc
 
 # PRLabel: %area-Storage
 /src/Arguments/Storage/                @alzimmermsft @jongio
