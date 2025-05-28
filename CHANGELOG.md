@@ -1,14 +1,18 @@
 # Release History
 
-## 0.0.22
+## 0.1.0 (Unreleased)
 
-### Other Changes
-
-- Removed "Arguments" from code base in favor of "Options" to align with System. CommandLine semantics. https://github.com/Azure/azure-mcp/pull/232
+### Features Added
 
 ### Breaking Changes
 
 - `azmcp tool list` "args" changes to "options"
+
+### Bugs Fixed
+
+### Other Changes
+
+- Removed "Arguments" from code base in favor of "Options" to align with System. CommandLine semantics. https://github.com/Azure/azure-mcp/pull/232
 
 ## 0.0.21 (2025-05-22)
 
