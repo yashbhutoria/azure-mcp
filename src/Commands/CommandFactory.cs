@@ -20,7 +20,7 @@ public class CommandFactory
     private readonly CommandGroup _rootGroup;
     private readonly ModelsJsonContext _srcGenWithOptions;
 
-    internal static readonly char Separator = '-';
+    internal const char Separator = '-';
 
     /// <summary>
     /// Mapping of tokenized command names to their <see cref="IBaseCommand" />
