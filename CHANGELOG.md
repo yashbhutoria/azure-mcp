@@ -4,6 +4,8 @@
 
 ### Features Added
 
+- Support for Azure ISV Services https://github.com/Azure/azure-mcp/pull/199/
+
 ### Breaking Changes
 
 ### Bugs Fixed
