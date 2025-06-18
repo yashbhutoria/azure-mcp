@@ -1,5 +1,92 @@
 # Troubleshooting
 
+## 128-Tool Limit Issue
+
+### Problem
+> [!WARNING]
+> Known Issue: "You may not include more than 128 tools in your request"
+
+When configuring Azure MCP with 'all' toolsets for convenience, you may encounter this error:
+
+![128 tools limit error](docs/images/128-tools-limit-error.png)
+
+### Root Cause
+VS Code Copilot has a limitation of 128 tools maximum per request. When you combine multiple comprehensive toolsets (like GitHub MCP 'all' + Azure MCP 'all'), the total number of available tools exceeds this limit.
+
+### Workarounds
+
+**Option 1: Use VS Code Custom Chat Modes (Recommended)**
+VS Code stable now supports [custom chat modes](https://code.visualstudio.com/docs/copilot/chat/chat-modes#_custom-chat-modes) that allow you to create scenario-specific tool configurations and quickly switch between them:
+
+*Setup Steps:*
+1. Install your desired MCP servers (Azure, GitHub, etc.)
+2. Create custom chat modes in VS Code for different workflows
+3. Switch between modes based on your current task
+4. Use the tool picker to discover and add additional tools as needed
+5. Stay within the 128-tool limit per mode while maintaining flexibility
+
+> [!NOTE]
+> This approach works well once VS Code resolves some current bugs where certain tools don't appear in the picker. This is an evolving feature that provides the best user experience.
+
+**Option 2: Use Selective Tool Loading (Manual Configuration)**
+Instead of loading all tools, configure targeted MCP servers for your specific needs:
+
+*Example Configuration:*
+```json
+{
+  "servers": {
+    "Azure Storage": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@azure/mcp@latest", "server", "start", "--service", "storage"]
+    },
+    "Azure KeyVault": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@azure/mcp@latest", "server", "start", "--service", "keyvault"]
+    },
+    "GitHub Issues": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github@latest"]
+    }
+  }
+}
+```
+*Result: ~15-20 tools total instead of 128+*
+
+*Available Azure Services for `--service` flag:*
+`storage`, `keyvault`, `cosmos`, `redis`, `servicebus`, `monitor`, `appconfig`, `kusto`, `postgres`, `search`
+
+**Option 3: Use Dynamic Tool Selection (Alternative Approach)**
+Use Azure MCP's dynamic proxy mode - exposes one tool that internally routes to all Azure services:
+
+*Example Configuration:*
+
+```json
+{
+  "servers": {
+    "Azure Dynamic": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@azure/mcp@latest", "server", "start", "--service", "azure"]
+    }
+  }
+}
+```
+
+> [!NOTE] 
+> This still counts as 1 tool toward the 128 limit, but that 1 tool can access all Azure services. However, if you're combining with GitHub MCP "all" or other comprehensive toolsets, you may still hit the 128-tool limit.
+
+### How to Check Your Tool Count
+To see how many tools you're loading:
+1. Open VS Code Command Palette (Ctrl+Shift+P)
+2. Run "MCP: List Servers"  
+3. Check the tool count for each server in the output window
+
+### Future Considerations
+VS Code Copilot is planning to address the tool limit in a future update.
+
 ## Observability with OpenTelemetry
 
 The server supports observability with [OpenTelemetry](https://opentelemetry.io/).
