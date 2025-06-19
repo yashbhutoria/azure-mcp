@@ -65,11 +65,17 @@ public sealed class McpClientService : IMcpClientService, IDisposable
             return;
         }
 
+        var registryProviders = ListRegistryProviders();
         var commandGroups = ListCommandGroupProviders();
-        foreach (var provider in commandGroups)
+
+        var allProviders = new List<IMcpClientProvider>();
+        allProviders.AddRange(registryProviders);
+        allProviders.AddRange(commandGroups);
+
+        foreach (var provider in allProviders)
         {
-            var meta = provider.CreateMetadata();
-            _providerMap[meta.Id] = provider;
+            var metadata = provider.CreateMetadata();
+            _providerMap[metadata.Id] = provider;
         }
 
         _initialized = true;
@@ -151,18 +157,33 @@ public sealed class McpClientService : IMcpClientService, IDisposable
     /// <returns>A list of <see cref="IMcpClientProvider"/>.</returns>
     private List<IMcpClientProvider> ListCommandGroupProviders()
     {
-        var results = new List<IMcpClientProvider>();
+        var ignoreCommandGroups = new List<string> { "extension", "server", "tools" };
 
-        foreach (var group in _commandFactory.RootGroup.SubGroup)
-        {
-            var commandGroup = new McpCommandGroup(group)
+        return _commandFactory.RootGroup.SubGroup
+            .Where(group => !ignoreCommandGroups.Contains(group.Name, StringComparer.OrdinalIgnoreCase))
+            .Select(group => new CommandGroupMcpClientProvider(group)
             {
                 ReadOnly = ReadOnly,
                 EntryPoint = EntryPoint,
-            };
-            results.Add(commandGroup);
-        }
+            })
+            .Cast<IMcpClientProvider>()
+            .ToList();
+    }
 
-        return results;
+    private List<IMcpClientProvider> ListRegistryProviders()
+    {
+        var registryProviders = new List<IMcpClientProvider>();
+        var registry = RegistryLoader.LoadRegistryAsync().GetAwaiter().GetResult();
+        if (registry?.Servers != null)
+        {
+            foreach (var kvp in registry.Servers)
+            {
+                if (kvp.Value != null)
+                {
+                    registryProviders.Add(new RegistryMcpClientProvider(kvp.Key, kvp.Value));
+                }
+            }
+        }
+        return registryProviders;
     }
 }
