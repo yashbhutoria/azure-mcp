@@ -1,10 +1,11 @@
 # Release History
 
-## 0.2.4 (Unreleased)
+## 0.2.4 (2025-06-24)
 
 ### Features Added
 
-- Added new command for resource-centric logs query in Azure Monitor with command path `azmcp-monitor-resource-logs-query` - https://github.com/Azure/azure-mcp/pull/413/
+- Added new command for resource-centric logs query in Azure Monitor with command path `azmcp-monitor-resource-logs-query` - https://github.com/Azure/azure-mcp/pull/413
+- Added support for starting the server with a subset of services using the `--service` flag - https://github.com/Azure/azure-mcp/pull/424
 - Improved index schema handling in Azure AI Search (index descriptions, facetable fields, etc.) - https://github.com/Azure/azure-mcp/pull/440
 - Added new commands for querying metrics with Azure Monitor with command paths `azmcp-monitor-metrics-query` and `azmcp-monitor-metrics-definitions`. - https://github.com/Azure/azure-mcp/pull/428
 
