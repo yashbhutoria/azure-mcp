@@ -7,6 +7,20 @@ This file contains prompts used for end-to-end testing to ensure each tool is in
 | azmcp-bestpractices-get | Fetch the latest Azure best practices |
 | azmcp-bestpractices-get | Fetch the latest Azure best practices and generate code sample to get a secret from Azure Key Vault |
 
+## Bicep
+
+| Tool Name | Test Prompt |
+|:----------|:----------|
+| azmcp-bicepschema-get | How can I use Bicep to create an Azure OpenAI service? |
+
+## Resource Group
+
+| Tool Name | Test Prompt |
+|:----------|:----------|
+| azmcp-group-list | List all resource groups in my subscription |
+| azmcp-group-list | Show me the resource groups in my subscription |
+| azmcp-group-list | Show me my resource groups |
+
 ## Subscription Management
 
 | Tool Name | Test Prompt |
@@ -16,13 +30,12 @@ This file contains prompts used for end-to-end testing to ensure each tool is in
 | azmcp-subscription-list | Show me my subscriptions |
 | azmcp-subscription-list | What is my current subscription? |
 
-## Resource Group
+## Tools
 
 | Tool Name | Test Prompt |
 |:----------|:----------|
-| azmcp-group-list | List all resource groups in my subscription |
-| azmcp-group-list | Show me the resource groups in my subscription |
-| azmcp-group-list | Show me my resource groups |
+| azmcp-tool-list | List all available tools in the Azure MCP server |
+| azmcp-tool-list | Show me the available tools in the Azure MCP server |
 
 ## Azure App Configuration
 
@@ -76,6 +89,13 @@ This file contains prompts used for end-to-end testing to ensure each tool is in
 | azmcp-kusto-table-list | Show me the tables in the Data Explorer database <database_name> in cluster <cluster_name> |
 | azmcp-kusto-table-schema | Show me the schema for table <table_name> in the Data Explorer database <database_name> in cluster <cluster_name> |
 
+## Azure Developer CLI
+
+| Tool Name | Test Prompt |
+|:----------|:----------|
+| azmcp-extension-azd | Create a To-Do list web application that uses NodeJS and MongoDB |
+| azmcp-extension-azd | Deploy my web application to Azure App Service |
+
 ## Azure Key Vault
 
 | Tool Name | Test Prompt |
@@ -91,7 +111,6 @@ This file contains prompts used for end-to-end testing to ensure each tool is in
 | Tool Name | Test Prompt |
 |:----------|:----------|
 | azmcp-monitor-healthmodels-entity-gethealth | Show me the health status of entity <entity_id> in the Log Analytics workspace <workspace_name> |
-| azmcp-monitor-log-query | Show me the logs for the past hour in the Log Analytics workspace <workspace_name> |
 | azmcp-monitor-metrics-definitions | What metric definitions are available for the Application Insights resource <resource_name> |
 | azmcp-monitor-metrics-definitions | Show me all available metrics and their definitions for storage account <account_name> |
 | azmcp-monitor-metrics-definitions | Get metric definitions for <resource_type> <resource_name> from the namespace |
@@ -101,6 +120,7 @@ This file contains prompts used for end-to-end testing to ensure each tool is in
 | azmcp-monitor-metrics-query | Analyze the performance trends and response times for Application Insights resource <resource_name> over the last <time_period> |
 | azmcp-monitor-metrics-query | Check the availability metrics for my Application Insights resource <resource_name> for the last <time_period> |
 | azmcp-monitor-metrics-query | Get the <aggregation_type> <metric_name> metric for <resource_type> <resource_name> over the last <time_period> with intervals |
+| azmcp-monitor-resource-logs-query | Show me the logs for the past hour for the resource <resource_name> in the Log Analytics workspace <workspace_name> |
 | azmcp-monitor-table-list | List all tables in the Log Analytics workspace <workspace_name> |
 | azmcp-monitor-table-list | Show me the tables in the Log Analytics workspace <workspace_name> |
 | azmcp-monitor-table-type-list | List all available table types in the Log Analytics workspace <workspace_name> |
@@ -108,6 +128,7 @@ This file contains prompts used for end-to-end testing to ensure each tool is in
 | azmcp-monitor-workspace-list | List all Log Analytics workspaces in my subscription |
 | azmcp-monitor-workspace-list | Show me the Log Analytics workspaces in my subscription |
 | azmcp-monitor-workspace-list | Show me my Log Analytics workspaces |
+| azmcp-monitor-workspace-logs-query | Show me the logs for the past hour in the Log Analytics workspace <workspace_name> |
 
 ## Azure Native ISV
 
@@ -137,16 +158,16 @@ This file contains prompts used for end-to-end testing to ensure each tool is in
 
 | Tool Name | Test Prompt |
 |:----------|:----------|
-| azmcp-redis-cluster-database-list | List all databases in the Redis Cluster <cluster_name> |
-| azmcp-redis-cluster-database-list | Show me the databases in the Redis Cluster <cluster_name> |
-| azmcp-redis-cluster-list | List all Redis Clusters in my subscription |
-| azmcp-redis-cluster-list | Show me the Redis Clusters in my subscription |
-| azmcp-redis-cluster-list | Show me my Redis Clusters |
 | azmcp-redis-cache-list | List all Redis Caches in my subscription |
 | azmcp-redis-cache-list | Show me the Redis Caches in my subscription |
 | azmcp-redis-cache-list | Show me my Redis Caches |
 | azmcp-redis-cache-list-accesspolicy | List all access policies in the Redis Cache <cache_name> |
 | azmcp-redis-cache-list-accesspolicy | Show me the access policies in the Redis Cache <cache_name> |
+| azmcp-redis-cluster-database-list | List all databases in the Redis Cluster <cluster_name> |
+| azmcp-redis-cluster-database-list | Show me the databases in the Redis Cluster <cluster_name> |
+| azmcp-redis-cluster-list | List all Redis Clusters in my subscription |
+| azmcp-redis-cluster-list | Show me the Redis Clusters in my subscription |
+| azmcp-redis-cluster-list | Show me my Redis Clusters |
 
 ## Azure RBAC
 
@@ -184,9 +205,9 @@ This file contains prompts used for end-to-end testing to ensure each tool is in
 | azmcp-storage-account-list | List all storage accounts in my subscription |
 | azmcp-storage-account-list | Show me the storage accounts in my subscription |
 | azmcp-storage-account-list | Show me my storage accounts |
+| azmcp-storage-blob-container-details | Show me the properties of the storage container files in the storage account <account_name> |
 | azmcp-storage-blob-container-list | List all blob containers in the storage account <account_name> |
 | azmcp-storage-blob-container-list | Show me the blob containers in the storage account <account_name> |
-| azmcp-storage-blob-container-details | Show me the properties of the storage container files in the storage account <account_name> |
 | azmcp-storage-blob-list | List all blobs in the blob container <container_name> in the storage account <account_name> |
 | azmcp-storage-blob-list | Show me the blobs in the blob container <container_name> in the storage account <account_name> |
 | azmcp-storage-table-list | List all tables in the storage account <account_name> |
