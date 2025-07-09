@@ -13,6 +13,8 @@
 
 - Fixed issue where trace logs could be collected as telemetry. [#540](https://github.com/Azure/azure-mcp/pull/540/)
 
+- Fixed the issue that was unable to find az from user environment PATH. [[#351](https://github.com/Azure/azure-mcp/issues/351)]
+
 ### Other Changes
 
 ## 0.3.1 (2025-07-08)
