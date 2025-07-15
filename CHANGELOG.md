@@ -11,6 +11,7 @@
 - [AOT] Switching to trimmer-friendly `npgsql` API, saving 2.69 MB in native executable [#592](https://github.com/Azure/azure-mcp/pull/592)
 
 ### Breaking Changes
+- Support "-" hyphen dash in command names. [[#531](https://github.com/Azure/azure-mcp/pull/531)]
 
 ### Bugs Fixed
 

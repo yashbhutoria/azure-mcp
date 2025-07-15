@@ -58,18 +58,18 @@ This keeps all code, options, models, and tests for a service together. See `src
    - `operation`: Action to perform (verb, lowercase)
 
    Each command is:
-   - In code, to avoid ambiguity between service classes and Azure services, we
-     refer to Azure services as Areas
+   - In code, to avoid ambiguity between service classes and Azure services, we refer to Azure services as Areas
    - Registered in the RegisterCommands method of its service's Areas/{Area}/{Area}Setup.cs file
    - Organized in a hierarchy of command groups
    - Documented with a title, description and examples
    - Validated before execution
    - Returns a standardized response format
 
-   **IMPORTANT**: Command group names cannot contain dashes. Use camelCase or concatenated names instead:
+   **IMPORTANT**: Command group names cannot contain underscores. Use camelCase or concatenated names or dash separator instead:
    - ✅ Good: `new CommandGroup("entraadmin", "Entra admin operations")`
-   - ❌ Bad: `new CommandGroup("ad-admin", "AD admin operations")`
-
+   - ✅ Good: `new CommandGroup("resourcegroup", "Resource group operations")`
+   - ✅ Good:`new CommandGroup("entra-admin", "Entra admin operations")`
+   - ❌ Bad: `new CommandGroup("entra_admin", "Entra admin operations")`
 
 ### Required Files
 
