@@ -9,6 +9,8 @@
 
 - Added new commands for Azure Function code generation and deployment best practices (https://github.com/Azure/azure-mcp/pull/630)
 
+ - Add `azmcp sql firewall-rule list` command to list SQL server firewall rules. [[#610](https://github.com/Azure/azure-mcp/pull/610)]
+
 ### Breaking Changes
 
 ### Bugs Fixed
