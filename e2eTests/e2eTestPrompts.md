@@ -60,6 +60,21 @@ This file contains prompts used for end-to-end testing to ensure each tool is in
 | azmcp-cosmos-database-list | List all the databases in the cosmosdb account <account_name> |
 | azmcp-cosmos-database-list | Show me the databases in the cosmosdb account <account_name> |
 
+## Azure Data Factory
+
+| Tool Name | Test Prompt |
+|:----------|:----------|
+| azmcp-datafactory-pipeline-list | List all pipelines in the Data Factory <factory_name> in resource group <resource_group> |
+| azmcp-datafactory-pipeline-list | Show me the pipelines in my Data Factory <factory_name> |
+| azmcp-datafactory-pipeline-run | Run the pipeline <pipeline_name> in Data Factory <factory_name> |
+| azmcp-datafactory-pipeline-run | Execute pipeline <pipeline_name> in Data Factory <factory_name> with parameters {"param1": "value1"} |
+| azmcp-datafactory-pipelinerun-get | Get the status of pipeline run <run_id> in Data Factory <factory_name> |
+| azmcp-datafactory-pipelinerun-get | Show me the details of pipeline run <run_id> in Data Factory <factory_name> |
+| azmcp-datafactory-dataset-list | List all datasets in the Data Factory <factory_name> |
+| azmcp-datafactory-dataset-list | Show me the datasets in my Data Factory <factory_name> |
+| azmcp-datafactory-linkedservice-list | List all linked services in the Data Factory <factory_name> |
+| azmcp-datafactory-linkedservice-list | Show me the linked services in my Data Factory <factory_name> |
+
 ## Azure Data Explorer
 
 | Tool Name | Test Prompt |

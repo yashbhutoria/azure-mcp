@@ -4,6 +4,12 @@
 
 ### Features Added
 - Support for Azure Load testing operations - Modify load testing resource, test and test runs. [#315](https://github.com/Azure/azure-mcp/pull/315)
+- Added support for Azure Data Factory operations including:
+  - List pipelines with `azmcp datafactory pipeline list`
+  - Run pipelines with parameters using `azmcp datafactory pipeline run`
+  - Monitor pipeline run status with `azmcp datafactory pipeline-run get`
+  - List datasets with `azmcp datafactory dataset list`
+  - List linked services with `azmcp datafactory linkedservice list`
 
 ### Breaking Changes
 
