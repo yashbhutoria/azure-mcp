@@ -72,6 +72,16 @@ module cosmos 'services/cosmos.bicep' = if (empty(areas) || contains(areas, 'Cos
   }
 }
 
+module datafactory 'services/datafactory.bicep' = if (empty(areas) || contains(areas, 'DataFactory')) {
+  name: '${deploymentName}-datafactory'
+  params: {
+    baseName: baseName
+    location: location
+    tenantId: tenantId
+    testApplicationOid: testApplicationOid
+  }
+}
+
 module foundry 'services/foundry.bicep' = if (contains(areas, 'Foundry')) {
   name: '${deploymentName}-foundry'
   params: {
