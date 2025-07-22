@@ -209,6 +209,38 @@ azmcp cosmos database container item query --subscription <subscription> \
                                            [--query "SELECT * FROM c"]
 ```
 
+### Azure Data Factory Operations
+
+```bash
+# List pipelines in a Data Factory
+azmcp datafactory pipeline list --subscription <subscription> \
+                                --resource-group <resource-group> \
+                                --factory <factory-name>
+
+# Run a pipeline with optional parameters
+azmcp datafactory pipeline run --subscription <subscription> \
+                               --resource-group <resource-group> \
+                               --factory <factory-name> \
+                               --pipeline <pipeline-name> \
+                               [--parameters '{"param1": "value1"}']
+
+# Get pipeline run status
+azmcp datafactory pipelinerun get --subscription <subscription> \
+                                  --resource-group <resource-group> \
+                                  --factory <factory-name> \
+                                  --run-id <run-id>
+
+# List datasets in a Data Factory
+azmcp datafactory dataset list --subscription <subscription> \
+                               --resource-group <resource-group> \
+                               --factory <factory-name>
+
+# List linked services in a Data Factory
+azmcp datafactory linkedservice list --subscription <subscription> \
+                                     --resource-group <resource-group> \
+                                     --factory <factory-name>
+```
+
 ### Azure Data Explorer Operations
 
 ```bash

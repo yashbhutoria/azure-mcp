@@ -75,6 +75,7 @@
     <PackageReference Include="Azure.Storage.Blobs" />
     <PackageReference Include="Azure.Storage.Files.DataLake" />
     <PackageReference Include="Azure.ResourceManager.CosmosDB" />
+    <PackageReference Include="Azure.ResourceManager.DataFactory" />
     <PackageReference Include="Azure.ResourceManager.Grafana" />
     <PackageReference Include="Azure.ResourceManager.OperationalInsights" />
     <PackageReference Include="Azure.ResourceManager.Search" />
